@@ -1,0 +1,75 @@
+1) Install the Gemini API SDK
+   The Python SDK for the Gemini API is contained in the google-generativeai package. Install the dependency using pip: pip install q -U google-generativeai
+
+2) Set up your API key (https://aistudio.google.com/app/apikey)
+
+3) Then, configure your key.
+  It is strongly recommended that you do not check an API key into your version control system but assign it as an environment variable instead: export API_KEY=<YOUR_API_KEY>
+  Import the library
+  Import and configure the Google Generative AI library.
+  -> import google.generativeai as genai
+     import os
+     genai.configure(api_key=os.environ["API_KEY"])
+
+*** 
+import google.generativeai as genai
+import os
+
+# Setting the environment variable correctly in Python
+os.environ["API_KEY"] = "AIzaSyC0nJvpCuqT5gl2HBb4GXVL6g2a91su_L4"
+
+# Configuring the API key
+genai.configure(api_key=os.environ["API_KEY"])
+
+# Initialize the model (ensure you're using the correct method to initialize)
+model = genai.GenerativeModel("gemini-1.5-flash")
+
+paragraph = ""
+print("Enter your paragraph (press Enter twice to finish):")
+
+while True:
+    line = input()
+    if line:
+        paragraph += line + "\n"
+    else:
+        break
+
+response = model.generate_content(paragraph)
+
+# Print the response
+print(response.text)
+
+***
+
+
+
+
+
+Vision capabilities with the Gemini API 
+	Using this to analyze Classroom Frames, Prompting with images
+	-> Gemini 1.5 Pro and 1.5 Flash support a maximum of 3,600 image files.
+	   Images must be in one of the following image data MIME types:
+	   PNG - image/png
+	   JPEG - image/jpeg
+	   WEBP - image/webp
+	   HEIC - image/heic
+	   HEIF - image/heif
+	   Each image is equivalent to 258 tokens.
+In this project images/frames will be uploaded using File API, Cause we can upload any type of image with size larger than 20MB to 20GB 
+SIH ID 1719 Project Report: Developing File API for Processing Images and Videos
+
+Overview of the process flow:
+
+Adding Image Files:
+Use the File API to send big image files (up to 2 GB) for examination in classroom supervision. Save the created URIs for future use in interacting with other AI models.
+
+Confirming the upload:
+Access and confirm uploaded documents through the File API to maintain metadata accuracy for monitoring purposes. AI technology used to create content. Merge image links with written prompts to create understandings like summaries, explanations, or evaluations. Creating classroom activity reports is a necessary task.
+
+Managing multiple images: Upload a variety of images and create AI-generated content that connects them, assisting with both problem-solving and creative production.
+
+Managing video files: Utilize the File API to upload and handle sizable video files. Confirm the status of video uploads and utilize artificial intelligence to create summaries, quizzes, or reports depending on the video's content.
+
+Detection of objects: Utilize artificial intelligence for identifying objects in pictures by creating bounding boxes, assisting in monitoring classroom activities.
+
+Management of the lifecycle of files: Files will be kept for a duration of 48 hours and can be listed, controlled, or removed as required.
