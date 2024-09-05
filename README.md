@@ -13,5 +13,6 @@ Flow Chart
 ![Flowchart](https://github.com/user-attachments/assets/9501beb4-e0d1-4ca8-a876-cd4e6ea0d4a4)  
 
 Process Architecture  
-![Your paragraph text](https://github.com/user-attachments/assets/3e0e2fe4-fd84-4845-a1c0-f8c7560b3b6a)
+![Architecture](https://github.com/user-attachments/assets/8086090c-285d-4b32-82d3-cfc84fcdcd05)
+
 
