@@ -2,7 +2,7 @@ import requests
 
 GEMINI_API_URL = "https://generativelanguage.googleapis.com"
 
-API_KEY = "AIzaSyC0nJvpCuqT5gl2HBb4GXVL6g2a91su_L4"
+API_KEY = "Your_API_Key"
 
 import google.generativeai as genai
 
